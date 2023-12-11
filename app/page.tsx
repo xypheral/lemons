@@ -5,10 +5,15 @@ import useTypewriter from 'react-typewriter-hook';
 import Lemon from './lemon.png';
 
 let id = 0;
+interface Lemon {
+  id: number;
+  top: string;
+  left: string;
+}
 
 export default function Home() {
   const [text, setText] = useState('Lemons');
-  const [lemons, setLemons] = useState([]);
+  const [lemons, setLemons] = useState<Lemon[]>([]);
   const magicWriter = useTypewriter(text);
 
   useEffect(() => {
